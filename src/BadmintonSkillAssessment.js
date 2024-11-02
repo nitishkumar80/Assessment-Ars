@@ -78,7 +78,8 @@ const BadmintonSkillAssessment = () => {
 
   return (
     <div className='assessment-container'>
-      <h1>Badminton Skill Assessment</h1>
+          <div className="background-blur"></div>
+      <h1>Badminton Assessment</h1>
       <div className='test-grid'>
         {renderCategoryCard('Technical Skills', technicalSkills, 'technicalSkills')}
         {renderCategoryCard('Agility', agility, 'agility')}

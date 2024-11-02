@@ -18,7 +18,8 @@ const FootballSkillAssessmentPage = () => {
 
   return (
     <div className="assessment-container">
-      <h1>Football Skill Assessment</h1>
+          <div className="background-blur"></div>
+      <h1>Football  Assessment</h1>
       <div className="test-grid">
         {/* Ball Control Skill Test */}
         <div className="section">

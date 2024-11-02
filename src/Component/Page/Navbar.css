@@ -1,49 +1,69 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-  }
-  
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 20px;
+  background-color: #33333327;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column; /* Stack links in a column */
+  align-items: flex-start; /* Align links to the left */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 10px 0; /* Spacing between items */
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.toggle-button {
+  display: none; /* Hide by default */
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
   .nav-list {
-    display: flex;
-    list-style: none;
+    flex-direction: row; /* Row layout for desktop */
+    align-items: center;
   }
-  
+
   .nav-item {
-    margin: 0 15px;
+    margin: 0 15px; /* Horizontal spacing for desktop */
   }
-  
-  .nav-item a {
-    color: white;
-    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide nav list by default */
+    flex-direction: column; /* Stack items */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background-color: #333333be;
+    padding: 10px 0;
   }
-  
+
+  .nav-list.open {
+    display: flex; /* Show when open */
+  }
+
   .toggle-button {
-    display: none; /* Hide by default */
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+    display: block; /* Show the toggle button on small screens */
   }
-  
-  @media (max-width: 768px) {
-    .nav-list {
-      display: none; /* Hide nav list by default */
-      flex-direction: column; /* Stack items */
-      position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      right: 0;
-      background-color: #333;
-    }
-  
-    .nav-list.open {
-      display: flex; /* Show when open */
-    }
-  
-    .toggle-button {
-      display: block; /* Show the toggle button on small screens */
-    }
-  }
-  
+}
